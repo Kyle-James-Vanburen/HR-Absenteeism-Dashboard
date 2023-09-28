@@ -2,7 +2,7 @@
 
 DASHBOARD WEB LINK if Power BI isnt installed on PC: https://app.powerbi.com/groups/me/reports/e805d794-f3c2-4ebf-8da2-94cd04f809a2/ReportSection?experience=power-bi
 
-Excel CSV files were used to transport data into MySQL via import wizard. Link is bellow: 
+Excel CSV files were used to transport data into MySQL to create my database columns via import wizard. Link is bellow: 
 https://drive.google.com/drive/folders/1LFCXsc0qZPS3NklzIXpFrrMCogETlMPu?usp=sharing
 
 MySQL query explanation: This SQL script analyzes employee absenteeism data from the "absenteeism_at_work" table to perform various operations, including data joining, employee bonus calculation, and optimization of the initial query.
