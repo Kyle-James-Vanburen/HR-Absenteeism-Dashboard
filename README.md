@@ -73,49 +73,53 @@ Analyze the impact of age, education, children, BMI, and seasons on absence hour
 
        SELECT
    
-       aaw.ID,
-       r.Reason,
-       `Month of absence`,
-       `Body mass index`,
+           aaw.ID,
+           r.Reason,
+           `Month of absence`,
+           `Body mass index`,
 
        CASE
    
-       WHEN `Body mass index` < 18.5 THEN 'Underweight'
-       WHEN `Body mass index` BETWEEN 18.5 AND 24.9 THEN 'Healthy'
-       WHEN `Body mass index` BETWEEN 25 AND 30 THEN 'Overweight'
-       WHEN `Body mass index` > 30 THEN 'Obese'
-       ELSE 'Unknown'
-       END AS `BMI category`,
+           WHEN `Body mass index` < 18.5 THEN 'Underweight'
+           WHEN `Body mass index` BETWEEN 18.5 AND 24.9 THEN 'Healthy'
+           WHEN `Body mass index` BETWEEN 25 AND 30 THEN 'Overweight'
+           WHEN `Body mass index` > 30 THEN 'Obese'
+           ELSE 'Unknown'
+           END AS `BMI category`,
 
        CASE
-       WHEN `Month of absence` IN (12, 1, 2) THEN 'Winter'
-       WHEN `Month of absence` IN (3, 4, 5) THEN 'Spring'
-       WHEN `Month of absence` IN (6, 7, 8) THEN 'Summer'
-       WHEN `Month of absence` IN (9, 10, 11) THEN 'Fall'
-       ELSE 'Unknown'
+   
+           WHEN `Month of absence` IN (12, 1, 2) THEN 'Winter'
+           WHEN `Month of absence` IN (3, 4, 5) THEN 'Spring'
+           WHEN `Month of absence` IN (6, 7, 8) THEN 'Summer'
+           WHEN `Month of absence` IN (9, 10, 11) THEN 'Fall'
+           ELSE 'Unknown'
 
-       END AS `Season name`,
-
-      `Month of absence`,
-      `Day of the week`,
-      `Transportation expense`,
-      `Education`,
-      `Son`,
-      `Social drinker`,
-      `Social smoker`,
-      `Pet`,
-      `Disciplinary failure`,
-      `Age`,
-      `Work load Average/day`,
-      `Absenteeism time in hours`
- 
+       END AS
+   
+       `Season name`,
+       `Month of absence`,
+       `Day of the week`,
+       `Transportation expense`,
+       `Education`,
+       `Son`,
+       `Social drinker`,
+       `Social smoker`,
+       `Pet`,
+       `Disciplinary failure`,
+       `Age`,
+       `Work load Average/day`,
+       `Absenteeism time in hours`
+  
        FROM
-       work.absenteeism_at_work AS aaw
+   
+          work.absenteeism_at_work AS aaw
+          LEFT JOIN work.compensation AS comp ON aaw.ID = comp.ID
+          LEFT JOIN work.reasons AS r ON aaw.`Reason for absence` = r.Number;
 
-       LEFT JOIN work.compensation AS comp ON aaw.ID = comp.ID
+## Contact
 
-       LEFT JOIN work.reasons AS r ON aaw.`Reason for absence` = r.Number;
+For questions or further assistance, please contact the project maintainer:
+Email: vanburen.kyle@yahoo.com
 
-
-
-
+Feel free to explore the data and gain valuable insights into employee absenteeism patterns. Thank you for your interest in my analysis dashboard!
