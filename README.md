@@ -12,7 +12,9 @@ Heres a weblink if you dont want to install Power BI, however you will be asked 
 
 SITUATION - HR needs their absence hours to be more analyzed for working employees. HR has provided me with three Excel CSV data sheets. One sheet with compensations data for each employee associated with a specific ID number. A second sheet with distinct(no duplicates)reasons for absence. And a third sheet with descriptive employee infromation with dates and count of each employees absence.
 
-TASK - Does age, education, children, and BMI have an impact in absence hours? Does the four seasons impact absence hours?
+TASK - I need to know does age, education, children, and BMI have an impact in absence hours? I will also check and see if any of the four season contribute to absence hours. And last, I will analyze the reasons of absence and expense of transportation for comparisons.
+
+ACTION - 
 
 MySQL query explanation: This SQL script analyzes employee absenteeism data from the "absenteeism_at_work" table to perform various operations, including data joining, employee bonus calculation, and optimization of the initial query.
 
