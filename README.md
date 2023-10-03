@@ -1,113 +1,41 @@
-# HR-Absenteeism-Dashboard
-You will need to use Excel to access the CSV files, heres a link for the free web version of Excel: https://www.office.com/launch/excel?ui=en-US&rs=US&auth=2
+#Employee Absenteeism Analysis Dashboard
 
-Excel CSV files that were used to transport data into MySQL to create my database columns via import wizard. Link is bellow: 
+Welcome to the Employee Absenteeism Analysis Dashboard. This project aims to provide in-depth analysis of employee absenteeism data to assist HR in making informed decisions. By leveraging Excel, MySQL, and Power BI, we've transformed raw data into actionable insights. Below, you'll find all the information you need to access and understand this analysis.
+
+##Requirements
+To interact with this dashboard, ensure you have the following tools installed:
+
+•Microsoft Excel (for accessing CSV files): 
+Free web version link for Excel: https://www.office.com/launch/excel?ui=en-US&rs=US&auth=2                                                                                                                               
+
+The Excel CSV files served as the source data for importing information into MySQL, enabling the creation of database columns through the import wizard. You can access these files using the following link: 
 https://drive.google.com/drive/folders/1LFCXsc0qZPS3NklzIXpFrrMCogETlMPu?usp=sharing
 
-You will also need to install a free desktop version of Power BI
-
-Heres a weblink if you dont want to install Power BI, however you will be asked to make a Power BI account: https://app.powerbi.com/groups/me/reports/e805d794-f3c2-4ebf-8da2-94cd04f809a2/ReportSection?experience=power-bi
-
-# S.T.A.R
-
-SITUATION - HR needs their absence hours to be more analyzed for working employees. HR has provided me with three Excel CSV data sheets. One sheet with compensations data for each employee associated with a specific ID number. A second sheet with distinct(no duplicates)reasons for absence. And a third sheet with descriptive employee infromation with dates and count of each employees absence.
-
-TASK - I need to know does age, education, children, and BMI have an impact in absence hours? I will also check and see if any of the four season contribute to absence hours. And last, I will analyze the reasons of absence and expense of transportation for comparisons.
-
-ACTION - Using MySQLs import data wizard tool along with sql queries, I collected and transformed the data from the excel sheets. Using the transform data option under the queries box in the home tab, I used the power query editior to apply my dax (Data Analysis Expressions) functions and operators to build my formulas and expressions to collect and organize the needed data for my task. With having the applied steps box on the right, I was able to keep track of my data transformation steps and functions. To make the data more precise I added a slicer filter. Which allows me to see the data for any season by selecting the desired one from slicer. I created donut charts for the descriptive employee information by sum of absence hours. I produced line charts for the months and days of week by average absence time in hours. Finally, I utilized a scatter chart for count of employee absence hours by transportation expense. And a matrix table for reason by count of reason for absence.
-
-RESULT - Because of my initiative, HR can now prepare accordingly for Winter and July since they are the highest season and month for total(4,194) and average(10.96) absenteeism hours. HR is also now able to make note that the medical consultation reason causes the highest count of absenteeism. And HR can even make decesions now on hiring employees with a $179 transportation expense from work since they counted for the most absenteeism of the year. At 10.96 , July had the highest Average of Absenteeism time in hours and was 168.29% higher than February, which had the lowest Average of Absenteeism time in hours at 4.08.
-
-MySQL query explanation: This SQL script analyzes employee absenteeism data from the "absenteeism_at_work" table to perform various operations, including data joining, employee bonus calculation, and optimization of the initial query.
-
-### 1. Create a Join Table
-
--- Create a join table
-
-SELECT * FROM work.absenteeism_at_work AS aaw
-
-LEFT JOIN work.compensation AS comp ON aaw.ID = comp.ID
-
-LEFT JOIN work.reasons AS r ON aaw.`Reason for absence = r.Number;
-
-This query creates a join table by combining data from the "absenteeism_at_work," "compensation," and "reasons" tables based on matching IDs and reasons for absence.
-
-### 2. Find the Most Healthy Employees for a Bonus
-
--- Find the most healthy employees for a bonus
-
-SELECT * FROM work.absenteeism_at_work
-
-WHERE 'Social drinker' = 0 AND 'Social smoker' = 0
-
-AND 'Body mass index' < 25
-
-AND 'Absenteeism time in hours' < (SELECT AVG('Absenteeism time in hours') FROM work.absenteeism_at_work);
-
-This query identifies employees eligible for a bonus based on specific health criteria, including not being a social drinker, not being a social smoker, having a body mass index (BMI) below 25, and having absenteeism hours below the average.
-
-### 3. Compensation Rate Increase for Non-Smokers
-
--- Compensation rate increase for non-smokers / BUDGET $983,221
-
--- A .68 cent increase per hour / $1,414.4 increase per year
-
-SELECT COUNT(*) AS nonsmokers FROM work.absenteeism_at_work WHERE 'Social smoker' = 0;
-
-This query calculates the number of non-smoking employees and proposes a compensation rate increase for them, along with an estimated budget impact.
-
-### 4. Optimized Query
-
--- Optimize starting query "get rid of wildcard"
-
-SELECT
-   
-    aaw.ID,
-    r.Reason,
-    `Month of absence`,
-    `Body mass index`,
-   
-    CASE
-       
-        WHEN `Body mass index` < 18.5 THEN 'Underweight'
-        WHEN `Body mass index` BETWEEN 18.5 AND 24.9 THEN 'Healthy'
-        WHEN `Body mass index` BETWEEN 25 AND 30 THEN 'Overweight'
-        WHEN `Body mass index` > 30 THEN 'Obese'
-        ELSE 'Unknown'
-    END AS `BMI category`,
-   
-    CASE
-        WHEN `Month of absence` IN (12, 1, 2) THEN 'Winter'
-        WHEN `Month of absence` IN (3, 4, 5) THEN 'Spring'
-        WHEN `Month of absence` IN (6, 7, 8) THEN 'Summer'
-        WHEN `Month of absence` IN (9, 10, 11) THEN 'Fall'
-        ELSE 'Unknown'
-    
-    END AS `Season name`,
-    
-    `Month of absence`,
-    `Day of the week`,
-    `Transportation expense`,
-    `Education`,
-    `Son`,
-    `Social drinker`,
-    `Social smoker`,
-    `Pet`,
-    `Disciplinary failure`,
-    `Age`,
-    `Work load Average/day`,
-    `Absenteeism time in hours`
-FROM
-   
-    work.absenteeism_at_work AS aaw
-    
-    LEFT JOIN work.compensation AS comp ON aaw.ID = comp.ID
-
-    LEFT JOIN work.reasons AS r ON aaw.`Reason for absence` = r.Number;
-
-  This optimized query retrieves essential employee absenteeism data, categorizes BMI and season, and joins relevant tables while eliminating unnecessary wildcards.
-    
-    
-CONTACT: If you have any questions or need further assistance, please feel free to contact the project maintainer at vanburen.kyle@yahoo.com.
 
 
+•Power BI Desktop (for advanced data visualization): 
+Web version link for Power BI, however you will be asked to make a Power BI account: https://app.powerbi.com/groups/me/reports/e805d794-f3c2-4ebf-8da2-94cd04f809a2/ReportSection?experience=power-bi
+
+##Data Sources
+We utilized three Excel CSV files to construct our database:
+
+Compensations Data: Employee compensations associated with specific ID numbers.
+Distinct Reasons for Absence: Unique reasons for absence.
+Descriptive Employee Information: Employee details, dates, and absence counts.
+
+##Analysis Details
+Situation
+HR required a detailed analysis of absence hours for working employees. Data provided included compensations, distinct absence reasons, and descriptive employee information.
+
+Task
+Analyze the impact of age, education, children, BMI, and seasons on absence hours. Investigate absence reasons and transportation expenses for comparisons.
+
+Actions Taken
+Utilized MySQL's import data wizard and SQL queries to transform data from Excel sheets.
+Applied DAX (Data Analysis Expressions) functions using Power Query Editor to organize the data.
+Implemented slicer filters for precise data viewing based on seasons.
+Created visualizations including donut charts, line charts, scatter charts, and matrix tables.
+Results
+Identified Winter and July as peak seasons for absenteeism.
+Medical consultations led in absence reasons, and $179 transportation expenses correlated with higher absenteeism.
+July had the highest average absenteeism time (10.96 hours), 168.29% more than February (4.08 hours).
