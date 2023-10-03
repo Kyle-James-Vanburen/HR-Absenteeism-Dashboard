@@ -1,9 +1,14 @@
 # HR-Absenteeism-Dashboard
+You will need to use Excel to access the CSV files, heres a link for the free web version of Excel: https://www.office.com/launch/excel?ui=en-US&rs=US&auth=2
 
-DASHBOARD WEB LINK if Power BI isnt installed on PC: https://app.powerbi.com/groups/me/reports/e805d794-f3c2-4ebf-8da2-94cd04f809a2/ReportSection?experience=power-bi
-
-Excel CSV files were used to transport data into MySQL to create my database columns via import wizard. Link is bellow: 
+Excel CSV files that were used to transport data into MySQL to create my database columns via import wizard. Link is bellow: 
 https://drive.google.com/drive/folders/1LFCXsc0qZPS3NklzIXpFrrMCogETlMPu?usp=sharing
+
+You will also need to install a free desktop version of Power BI
+
+Heres a weblink if you dont want to install Power BI, however you will be asked to make a Power BI account: https://app.powerbi.com/groups/me/reports/e805d794-f3c2-4ebf-8da2-94cd04f809a2/ReportSection?experience=power-bi
+
+# S.T.A.R
 
 MySQL query explanation: This SQL script analyzes employee absenteeism data from the "absenteeism_at_work" table to perform various operations, including data joining, employee bonus calculation, and optimization of the initial query.
 
