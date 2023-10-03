@@ -14,7 +14,9 @@ SITUATION - HR needs their absence hours to be more analyzed for working employe
 
 TASK - I need to know does age, education, children, and BMI have an impact in absence hours? I will also check and see if any of the four season contribute to absence hours. And last, I will analyze the reasons of absence and expense of transportation for comparisons.
 
-ACTION - 
+ACTION - Using MySQLs import data wizard tool along with sql queries, I collected and transformed the data from the excel sheets. Using the transform data option under the queries box in the home tab, I used the power query editior to apply my dax (Data Analysis Expressions) functions and operators to build my formulas and expressions to collect and organize the needed data for my task. With having the applied steps box on the right, I was able to keep track of my data transformation steps and functions. To make the data more precise I added a slicer filter. Which allows me to see the data for any season by selecting the desired one from slicer. I created donut charts for the descriptive employee information by sum of absence hours. I produced line charts for the months and days of week by average absence time in hours. Finally, I utilized a scatter chart for count of employee absence hours by transportation expense. And a matrix table for reason by count of reason for absence.
+
+RESULT -
 
 MySQL query explanation: This SQL script analyzes employee absenteeism data from the "absenteeism_at_work" table to perform various operations, including data joining, employee bonus calculation, and optimization of the initial query.
 
