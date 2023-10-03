@@ -38,8 +38,11 @@ Analyze the impact of age, education, children, BMI, and seasons on absence hour
 ### Actions Taken
 
 • Utilized MySQL's import data wizard and SQL queries to transform data from Excel sheets.
+
 • Applied DAX (Data Analysis Expressions) functions using Power Query Editor to organize the data.
+
 • Implemented slicer filters for precise data viewing based on seasons.
+
 • Created visualizations including donut charts, line charts, scatter charts, and matrix tables.
 
 ### Results
