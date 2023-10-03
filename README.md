@@ -1,5 +1,5 @@
 #Employee Absenteeism Analysis Dashboard 
-
+ 
 Welcome to the Employee Absenteeism Analysis Dashboard. This project aims to provide in-depth analysis of employee absenteeism data to assist HR in making informed decisions. By leveraging Excel, MySQL, and Power BI, we've transformed raw data into actionable insights. Below, you'll find all the information you need to access and understand this analysis.
 
 ##Requirements
