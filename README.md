@@ -20,7 +20,9 @@ Web version link for Power BI, however you will be asked to make a Power BI acco
 We utilized three Excel CSV files to construct our database:
 
 • Compensations Data: Employee compensations associated with specific ID numbers.
+
 • Distinct Reasons for Absence: Unique reasons for absence.
+
 • Descriptive Employee Information: Employee details, dates, and absence counts.
 
 ## Analysis Details
