@@ -1,8 +1,8 @@
-#-Employee Absenteeism Analysis Dashboard 
+# Employee Absenteeism Analysis Dashboard 
  
 Welcome to the Employee Absenteeism Analysis Dashboard. This project aims to provide in-depth analysis of employee absenteeism data to assist HR in making informed decisions. By leveraging Excel, MySQL, and Power BI, we've transformed raw data into actionable insights. Below, you'll find all the information you need to access and understand this analysis.
 
-##Requirements
+## Requirements
 To interact with this dashboard, ensure you have the following tools installed:
 
 •Microsoft Excel (for accessing CSV files): 
@@ -16,20 +16,20 @@ https://drive.google.com/drive/folders/1LFCXsc0qZPS3NklzIXpFrrMCogETlMPu?usp=sha
 •Power BI Desktop (for advanced data visualization): 
 Web version link for Power BI, however you will be asked to make a Power BI account: https://app.powerbi.com/groups/me/reports/e805d794-f3c2-4ebf-8da2-94cd04f809a2/ReportSection?experience=power-bi
 
-##Data Sources
+## Data Sources
 We utilized three Excel CSV files to construct our database:
 
 •Compensations Data: Employee compensations associated with specific ID numbers.
 •Distinct Reasons for Absence: Unique reasons for absence.
 •Descriptive Employee Information: Employee details, dates, and absence counts.
 
-##Analysis Details
+## Analysis Details
 
-###Situation
+### Situation
 
 HR required a detailed analysis of absence hours for working employees. Data provided included compensations, distinct absence reasons, and descriptive employee information.
 
-###Task
+### Task
 
 Analyze the impact of age, education, children, BMI, and seasons on absence hours. Investigate absence reasons and transportation expenses for comparisons.
 
