@@ -5,7 +5,7 @@ Welcome to the Employee Absenteeism Analysis Dashboard. This project aims to pro
 ## Requirements
 To interact with this dashboard, ensure you have the following tools installed:
 
-•Microsoft Excel (for accessing CSV files): 
+• Microsoft Excel (for accessing CSV files): 
 Free web version link for Excel: https://www.office.com/launch/excel?ui=en-US&rs=US&auth=2                                                                                                                               
 
 The Excel CSV files served as the source data for importing information into MySQL, enabling the creation of database columns through the import wizard. You can access these files using the following link: 
@@ -13,15 +13,15 @@ https://drive.google.com/drive/folders/1LFCXsc0qZPS3NklzIXpFrrMCogETlMPu?usp=sha
 
 
 
-•Power BI Desktop (for advanced data visualization): 
+• Power BI Desktop (for advanced data visualization): 
 Web version link for Power BI, however you will be asked to make a Power BI account: https://app.powerbi.com/groups/me/reports/e805d794-f3c2-4ebf-8da2-94cd04f809a2/ReportSection?experience=power-bi
 
 ## Data Sources
 We utilized three Excel CSV files to construct our database:
 
-•Compensations Data: Employee compensations associated with specific ID numbers.
-•Distinct Reasons for Absence: Unique reasons for absence.
-•Descriptive Employee Information: Employee details, dates, and absence counts.
+• Compensations Data: Employee compensations associated with specific ID numbers.
+• Distinct Reasons for Absence: Unique reasons for absence.
+• Descriptive Employee Information: Employee details, dates, and absence counts.
 
 ## Analysis Details
 
