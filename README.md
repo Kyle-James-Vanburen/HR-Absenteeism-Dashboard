@@ -120,7 +120,7 @@ Analyze the impact of age, education, children, BMI, and seasons on absence hour
           LEFT JOIN work.compensation AS comp ON aaw.ID = comp.ID
           LEFT JOIN work.reasons AS r ON aaw.`Reason for absence` = r.Number;
 
-## Contact
+### Contact ###
 
 For questions or further assistance, please contact the project maintainer:
 Email: vanburen.kyle@yahoo.com
